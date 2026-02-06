@@ -1,0 +1,126 @@
+/* reset base */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* corpo della pagina */
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f2f4f8, #d9e2f3);
+}
+
+/* contenitore login */
+.login-container {
+  background: #ffffff;
+  padding: 36px 32px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* titolo login */
+.login-title {
+  color: #000000;
+  margin-bottom: 24px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* campo input */
+.login-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.login-field label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.login-field input {
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-field input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
+
+/* bottoni */
+.login-button {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+/* login principale */
+.login-button:first-of-type {
+  background-color: #4a90e2;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.login-button:first-of-type:hover {
+  background-color: #357ab8;
+}
+
+/* signup secondario */
+.login-button:last-of-type {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.login-button:last-of-type:hover {
+  background-color: #d5d5d5;
+}
+
+/* piccola animazione hover */
+.login-button:active {
+  transform: scale(0.98);
+}
+
+/* mobile friendly */
+@media (max-width: 400px) {
+  .login-container {
+    width: 90%;
+    padding: 28px 20px;
+  }
+}
+
+/* messaggio di errore */
+.login-error {
+  color: #d32f2f; /* rosso forte */
+  background-color: #fdecea; /* leggero sfondo rosato */
+  border: 1px solid #f5c6cb; /* bordo delicato */
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: 12px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* animazione fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
