@@ -17,7 +17,7 @@ class Database:
         try:
             self.connection_pool = psycopg2.pool.SimpleConnectionPool(
                 1,
-                3,
+                10,
                 user=os.getenv("POSTGRES_USER"),
                 password=os.getenv("POSTGRES_PASSWORD"),
                 host=os.getenv("POSTGRES_HOST"),
@@ -25,14 +25,18 @@ class Database:
                 database=os.getenv("POSTGRES_DB")
             )
         except Exception as e:
+            self.connection_pool = None
             print("Errore: connessione non riuscita ", e)
 
     def get_connection(self):
+        if not self.connection_pool:
+            raise Exception("Connection pool non inizializzata")
         return self.connection_pool.getconn()
 
     def release_connection(self, connessione):
-        self.connection_pool.putconn(connessione)
-
+        if self.connection_pool and connessione:
+            self.connection_pool.putconn(connessione)
+            
     def closeall_connection(self):
         if self.connection_pool:
             self.connection_pool.closeall()

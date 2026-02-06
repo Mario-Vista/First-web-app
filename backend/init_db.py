@@ -1,5 +1,5 @@
 """
-File per inizializzare il database
+File per inizializzare il database  
 """
 
 from database import db
