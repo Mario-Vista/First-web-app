@@ -1,9 +1,3 @@
-Perfetto 👍 allora ti riscrivo il README **integrando l’uso del file `.env`** in modo pulito e standard.
-
-Puoi sostituire direttamente la sezione interessata o usare tutto il file qui sotto.
-
----
-
 # Login Page – Full Stack Project
 
 Questo progetto è una **pagina di login full stack** che mostra l’integrazione tra frontend, backend e database utilizzando **Docker**, **FastAPI**, **PostgreSQL** e **React**.
