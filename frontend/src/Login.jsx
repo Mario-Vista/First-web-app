@@ -77,7 +77,7 @@ export default function Login({ user, setUser }) {
       {/* If user is not logged in, show login form */}
       {!user.success && (
         <div className="login-container">
-          <h2 className="login-title">Login</h2>
+          <h2 className="login-title">MyApp</h2>
 
           {/* Username input field */}
           <div className="login-field">
